@@ -6,9 +6,11 @@
 1. PR 은 approve 된 후에 Squash Merge로만 merge 합니다.
   - 그래야 `main` 브랜치 안에서의 커밋 역사가 일괄적으로 깨끗하게 유지가 됩니다.
 
-2. `main` 브랜치 안에 내용이 가장 최신 릴리스 코드 버젼입니다.
-  - 생각하기 쉽게 됩니다.
-  - 만약 릴리스를 버젼으로 관리 하고 싶다면, [release-please](https://github.com/googleapis/release-please) 툴을 추천합니다.
+2. `main` 브랜치 안에 내용이 가장 최근에 개발하고 있는 코드입니다.
+  - squash merge만 할 수 있게 정해 놓으면 각각 커밋은 하나의 작업 유닛, 그리고 작업 티켓과 동일하게 볼 수 있는 형태가 됩니다.
+  - 그리고 어느 정도 하나의 버젼 릴리스가 가능하다 싶으면 그 커밋에 태그로 마킹을 하고, 그 태그를 `staging` 이라고 이름지어진 브랜치로 merge합니다.
+  - 자동화 하고 싶으세요?
+    - [release-please](https://github.com/googleapis/release-please) 툴을 추천합니다.
     - 이렇게 하면 `main`은 Staging (실제 프로덕션이 아닌 임시 환경 - 테스트를 돌리고 등)이 되고, 릴리스 된 버젼이 production이 됩니다.
     - 아마도 프로젝트를 진행함에 있어 여기까지 신경은 안써도 되지만, 만약 CI/CD를 이제 할 단계가 온다면 제일 쉽게 릴리스 버젼을 추가할 수 있는 방법이 아닐까 합니다.
 
